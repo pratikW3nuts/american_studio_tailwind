@@ -209,9 +209,8 @@
      <!-- listen subscribe :end -->
     <footer class="main_footer">
       <div class="footer_wrap flex xl:flex-row lg:flex-row md:flex-row flex-col max-w-full relative ">
-        <div
-          class="leftpart w-[100%] md:w-[50%] py-[20px] xl:py-[50] lg:py-[40] md:py-[35]  xl:pl-[65px] lg:pl-[60px] md:pl-[50px] pl-[15px]">
-          <div class="logoinfo">
+        <div class="leftpart w-[100%] md:w-[50%] py-[20px] xl:py-[50px] lg:py-[40px] md:py-[35px]  xl:pl-[65px] lg:pl-[60px] md:pl-[50px] pl-[15px]">
+          <!-- <div class="logoinfo">
             <div class="detailblock max-w-[512px] xl:pb-[44px] lg:pb-[40px] md:pb-[30px] pb-[25px] ">
               <div class="ftrlogo xl:max-w-[289px] lg:max-w-[260px] md:max-w-[255px] max-w-[150px] mb-[16px]">
                 <a href="#" class="block"><img src="images/footerBrandlogo.svg" class="w-full h-auto" alt=""></a>
@@ -229,12 +228,12 @@
               <a href="mailto:info@americanstudio.com"
                 class="mail outfit xl:text-[32px] lg:text-[28px] md:text-[24px] text-[22px] leading-[1.37] text-primary">info@americanstudio.com</a>
             </div>
-          </div>
+          </div> -->
         </div>
         <div
-          class="rightpart w-[100%] md:w-[50%] relative py-[20px] xl:py-[50] lg:py-[40] md:py-[35] xl:pl-[88px] lg:pl-[60px] md:pl-[55px] pl-[15px]">
+          class="rightpart w-[100%] md:w-[50%] relative py-[20px] xl:py-[50px] lg:py-[40px] md:py-[35px] xl:pl-[88px] lg:pl-[60px] md:pl-[55px] pl-[15px]">
           <div class="rghtside relative z-1">
-            <div class="pages_linkbox xl:pb-[60px] lg:pb-[50px] md:pb-[35px] pb-[20px]">
+            <!-- <div class="pages_linkbox xl:pb-[60px] lg:pb-[50px] md:pb-[35px] pb-[20px]">
               <h3
                 class="font-outfit font-semibold xl:text-[32px] lg:text-[30px] md:text-[26px] text-[22px] leading-[1.37] text-white pb-[15px] xl:pb-[24px] lg:pb-[22px] md:pb-[20px]">
                 Pages</h3>
@@ -280,7 +279,7 @@
               </div>
             </div>
             <div class="design_by font-outfit font-400 text-[16px] leading-[1.5] text-grey">© 2020 Designed by
-              Showplatform  </div>
+              Showplatform  </div> -->
           </div>
         </div>
       </div>
@@ -407,6 +406,79 @@ rightbox.map((element, i) => {
     addrightbox.innerHTML += rightide;
     subscribe_wrap.appendChild(addrightbox);
 });
+
+//=============================================================== footer ==================================================
+//footer
+leftftr.map( (element,i) => {
+	// console.log(element)
+	const footer_wrap = document.querySelector(".footer_wrap");
+	// console.log(footer_wrap);
+
+	const test = document.createElement('div');
+	test.classList = 'leftpart';
+ 
+	const leftside =`<div class="logoinfo">
+            <div class="detailblock max-w-[512px] xl:pb-[44px] lg:pb-[40px] md:pb-[30px] pb-[25px] ">
+              <div class="ftrlogo xl:max-w-[289px] lg:max-w-[260px] md:max-w-[255px] max-w-[150px] mb-[16px]">
+				<a href="#" class="block"><img src=${element.logo} class="w-full h-auto" alt=""></a>
+              </div>
+              <p class="font-outfit font-400 text-[16px] leading-[1.5] text-grey">${element.ptext}</p>
+            </div>
+
+            <div class="mailinfo max-w-[384px]">
+              <span class="font-outfit xl:text-[24px] lg:text-[22px] md:text-[20px] text-[20px] leading-[1.25] text-white pb-[24px] block">
+				${element.span}
+				</span>
+              <a href="mailto:info@americanstudio.com"
+                class="mail outfit xl:text-[32px] lg:text-[28px] md:text-[24px] text-[22px] leading-[1.37] text-primary">${element.mail_link}</a>
+            </div>
+          </div>
+	`;
+	
+	test.innerHTML += leftside;
+	footer_wrap.appendChild(test);
+});
+
+
+
+rightftr.map( (element,i) => {
+	// console.log(element)
+	const footer_wrap = document.querySelector(".footer_wrap");
+	// console.log(footer_wrap);
+
+	const rghtM = document.createElement('div');
+	rghtM.classList = 'rightpart';
+
+	const rghtside =`
+		 <div class="pages_linkbox xl:pb-[60px] lg:pb-[50px] md:pb-[35px] pb-[20px]">
+              <h3 class="font-outfit font-semibold xl:text-[32px] lg:text-[30px] md:text-[26px] text-[22px] leading-[1.37] text-white pb-[15px] xl:pb-[24px] lg:pb-[22px] md:pb-[20px]">
+                ${element.title_right}</h3>
+              <ul class="flex  lg:flex-row md:flex-col flex-col">
+			  ${element.footer_menu.map(menuItem => `<li><a href="#" class="relative block transition transition-all duration-[0.3s] ease-in-out font-outfit font-normal text-[16px] leading-[1.5] hover:text-white text-grey xl:ml-[50px] lg:ml-[40px] md:ml-0 ml-0">${menuItem}</a></li>`).join('')} 
+                
+                </li>
+              </ul>
+            </div>
+
+            <div class="social_row flex xl:pb-[60px] lg:pb-[50px] md:pb-[28px] pb-[20px]">
+			  ${element.socialrow.map(socialIcon => `
+                    <div class="icon">
+                        <a href="#" class="h-[44px] w-[44px] flex justify-center items-center rounded-full border-[1px] border-white">
+                            <div class="imgbox">
+                                <img src="${Object.values(socialIcon)[0]}" alt="">
+                            </div>
+                        </a>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="design_by font-outfit font-400 text-[16px] leading-[1.5] text-grey">${element.designby}</div>
+
+	`;
+	
+	rghtM.innerHTML += rghtside;
+	footer_wrap.appendChild(rghtM);
+});
+
 </script>
 </body>
 

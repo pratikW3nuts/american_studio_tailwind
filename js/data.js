@@ -61,3 +61,28 @@ const rightbox = [
 		],
 	},
 ];
+
+//footer
+const leftftr = [
+	{
+		logo : "images/footerBrandlogo.svg",
+		ptext : "The final image is much depending on such a relationship. My clients tell me they manage to trust me completely and that is the best thing i could hear.",
+		span : "Drop us a line or say hi, we are open for craft your ideas.",
+		mail_link : "info@americanstudio.com"
+	},
+];
+
+const rightftr = [
+	{
+		title_right : "tpage",
+
+		footer_menu : ['menu1','menu2','menu3','menu4','menu5'],
+		socialrow: [
+            {fb: 'images/ftrfb.svg'},
+            {insta: 'images/ftrinsta.svg'}, 
+            {twit: 'images/ftrlinkin.svg'},
+			{twit: 'images/ftrtwit.svg'},
+	],
+		designby : "design by showplatform"
+	},
+];
