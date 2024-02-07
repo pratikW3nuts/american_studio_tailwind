@@ -99,7 +99,9 @@
 .scrolldesable{overflow: hidden;}
 
 
-
+.fixed {
+  background: #353535;
+}
 
 @media (max-width: 991px) {
   .btnbox{margin: 0 0 0 auto;}
